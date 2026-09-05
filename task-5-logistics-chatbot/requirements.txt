@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+pydantic
+scikit-learn
+httpx
+jinja2
+pytest
+sentence-transformers
+torch

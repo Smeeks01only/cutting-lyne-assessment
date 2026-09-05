@@ -1,0 +1,748 @@
+[
+  {
+    "id": "doc_imp_001",
+    "category": "import_documentation",
+    "title": "General Import Documentation",
+    "canonical_question": "What documents do I need for import?",
+    "query_variations": [
+      "What documents do I need to import goods?",
+      "What paperwork is required for importing?",
+      "Which documents are needed for an import shipment?",
+      "What import documentation do I need?",
+      "What docs do I need to bring goods into the country?",
+      "What papers are required to clear imported cargo?",
+      "What documentation is needed for customs clearance?",
+      "Which paperwork should I prepare for an incoming shipment?",
+      "Do I need papers to import?"
+    ],
+    "synonyms": [
+      "documents",
+      "documentation",
+      "paperwork",
+      "papers",
+      "docs",
+      "requirements",
+      "import",
+      "incoming shipment",
+      "bring goods in"
+    ],
+    "answer": "Commonly required import documents include a Commercial Invoice, Packing List, Bill of Lading or Air Waybill, and an Arrival Notice. Depending on the shipment's origin and cargo type, additional documents such as a Certificate of Origin or specific import permits may be required.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "doc_exp_001",
+    "category": "export_documentation",
+    "title": "General Export Documentation",
+    "canonical_question": "What documents do I need for export?",
+    "query_variations": [
+      "What paperwork is needed to export goods?",
+      "Which documents are required for an export shipment?",
+      "What export documentation do I need?",
+      "What docs do I need to send goods out of the country?",
+      "What papers are required to ship goods overseas?",
+      "Which paperwork should I prepare for an outgoing shipment?",
+      "What do I need to export cargo?"
+    ],
+    "synonyms": [
+      "documents",
+      "paperwork",
+      "export",
+      "outgoing",
+      "ship overseas",
+      "send abroad",
+      "papers"
+    ],
+    "answer": "Export shipments typically require a Commercial Invoice, Packing List, and a transport document (Bill of Lading or Air Waybill). Depending on the destination and the goods, you may also need an Export Declaration, Certificate of Origin, or specific export permits.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "duty_001",
+    "category": "customs_duties",
+    "title": "Customs Duty Calculation",
+    "canonical_question": "What duties do I pay?",
+    "query_variations": [
+      "How much customs will I pay?",
+      "What tax is charged on imports?",
+      "How expensive will clearing my goods be?",
+      "How are import charges calculated?",
+      "What determines my customs bill?",
+      "Will I pay duty on this shipment?",
+      "How do customs calculate what I owe?",
+      "What import charges should I expect?",
+      "How much tax will I be charged on imported goods?"
+    ],
+    "synonyms": [
+      "customs duty",
+      "import duty",
+      "tariff",
+      "tax",
+      "taxes",
+      "charges",
+      "fees",
+      "bill",
+      "cost",
+      "calculate"
+    ],
+    "answer": "Customs duties are generally calculated based on the Harmonized System (HS) code of the goods, their declared value, the country of origin, and the destination country's tariff schedule. Rates vary significantly depending on these factors.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "clear_001",
+    "category": "customs_clearance",
+    "title": "Customs Holds and Delays",
+    "canonical_question": "Why is my shipment stuck in customs?",
+    "query_variations": [
+      "My consignment is being held at customs \u2014 why?",
+      "Why hasn't customs released my cargo?",
+      "What causes a customs delay?",
+      "Why is my freight detained at the border?",
+      "My cargo is stuck at customs, what could be wrong?",
+      "Why is clearance taking too long?",
+      "Goods detained by customs, why?",
+      "Why is my package held up?"
+    ],
+    "synonyms": [
+      "stuck",
+      "held",
+      "detained",
+      "delayed",
+      "late",
+      "blocked",
+      "customs hold",
+      "clearance"
+    ],
+    "answer": "Shipments may be held by customs due to missing or incorrect documentation, random physical inspections, unpaid duties, or regulatory compliance checks. Your customs broker can advise you on the specific reason.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "hs_001",
+    "category": "hs_codes",
+    "title": "Harmonized System Classification",
+    "canonical_question": "What is an HS code?",
+    "query_variations": [
+      "What's a tariff code?",
+      "What product code do I need?",
+      "How do customs classify products?",
+      "How do I classify my goods?",
+      "Where can I find my HS number?",
+      "What's the customs classification for my product?",
+      "What does HS code mean?"
+    ],
+    "synonyms": [
+      "hs code",
+      "tariff code",
+      "product code",
+      "classification",
+      "harmonized system",
+      "commodity code"
+    ],
+    "answer": "An HS (Harmonized System) code is an internationally standardized system of names and numbers to classify traded products. It determines the applicable duty rates, taxes, and regulatory requirements for your cargo.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "doc_com_001",
+    "category": "import_documentation",
+    "title": "Commercial Invoice Requirements",
+    "canonical_question": "What information must be on a Commercial Invoice?",
+    "query_variations": [
+      "What needs to be included in a commercial invoice?",
+      "Commercial invoice requirements?",
+      "How to fill out a commercial invoice?",
+      "What details go on the invoice for customs?",
+      "Do I need HS codes on the invoice?"
+    ],
+    "synonyms": [
+      "commercial invoice",
+      "invoice",
+      "value",
+      "seller",
+      "buyer",
+      "pricing",
+      "document"
+    ],
+    "answer": "A Commercial Invoice must include the buyer and seller details, a detailed description of the goods, HS codes, unit prices, total value, currency, terms of sale (Incoterms), and country of origin.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "log_inco_001",
+    "category": "general_logistics",
+    "title": "Incoterms Overview",
+    "canonical_question": "What are Incoterms?",
+    "query_variations": [
+      "What's the difference between FOB and CIF?",
+      "What does EXW mean?",
+      "Explain shipping terms of sale.",
+      "Who pays for freight and insurance?",
+      "What do three letter shipping codes mean?"
+    ],
+    "synonyms": [
+      "incoterms",
+      "terms of sale",
+      "fob",
+      "cif",
+      "exw",
+      "dap",
+      "ddp",
+      "responsibility",
+      "freight cost"
+    ],
+    "answer": "Incoterms (International Commercial Terms) are standardized rules published by the ICC that define the responsibilities of buyers and sellers under sales contracts. They dictate exactly who is responsible for paying freight, insurance, and customs clearance.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "log_fcl_001",
+    "category": "general_logistics",
+    "title": "FCL vs LCL",
+    "canonical_question": "What is the difference between FCL and LCL?",
+    "query_variations": [
+      "Should I use FCL or LCL?",
+      "What does FCL mean?",
+      "What does LCL mean?",
+      "Difference between full container and less than container?",
+      "How do I ship a small amount of cargo?",
+      "Is it cheaper to ship FCL or LCL?"
+    ],
+    "synonyms": [
+      "fcl",
+      "lcl",
+      "full container load",
+      "less than container load",
+      "ocean freight",
+      "consolidation"
+    ],
+    "answer": "FCL (Full Container Load) means you rent an entire container for your goods, which is faster and safer. LCL (Less than Container Load) means your goods share a container with other shippers, which is more cost-effective for smaller volumes but takes longer due to consolidation.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_9",
+    "category": "import_documentation",
+    "title": "Packing Lists",
+    "canonical_question": "What is a packing list?",
+    "query_variations": [
+      "What goes on a packing list?",
+      "Do I need a packing slip?",
+      "Is a packing list required?"
+    ],
+    "synonyms": [
+      "packing list"
+    ],
+    "answer": "A packing list details the contents, dimensions, and weight of each package in a shipment. Customs uses it for physical inspections.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_10",
+    "category": "import_documentation",
+    "title": "Bills of Lading",
+    "canonical_question": "What is a Bill of Lading?",
+    "query_variations": [
+      "What does B/L mean?",
+      "Do I need an ocean bill of lading?",
+      "What is a BOL?"
+    ],
+    "synonyms": [
+      "bill of lading"
+    ],
+    "answer": "A Bill of Lading (B/L) is a legal document issued by an ocean carrier acknowledging receipt of cargo. It acts as a receipt, contract, and document of title.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_11",
+    "category": "import_documentation",
+    "title": "Air Waybills",
+    "canonical_question": "What is an Air Waybill?",
+    "query_variations": [
+      "What does AWB mean?",
+      "Is an air waybill the same as a bill of lading?",
+      "Air freight documentation?"
+    ],
+    "synonyms": [
+      "air waybill"
+    ],
+    "answer": "An Air Waybill (AWB) is a non-negotiable transport document issued by an airline. Unlike a B/L, it is not a document of title.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_12",
+    "category": "import_documentation",
+    "title": "Certificates of Origin",
+    "canonical_question": "Do I need a Certificate of Origin?",
+    "query_variations": [
+      "What is a COO?",
+      "How do I prove origin?",
+      "Do I need a form to claim free trade benefits?"
+    ],
+    "synonyms": [
+      "certificate of origin"
+    ],
+    "answer": "A Certificate of Origin (COO) may be required by destination customs to verify where the goods were manufactured, often to claim reduced tariffs under Free Trade Agreements.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_13",
+    "category": "import_documentation",
+    "title": "Import Permits",
+    "canonical_question": "Do I need an import permit?",
+    "query_variations": [
+      "Are permits required for import?",
+      "Do I need a license to import?",
+      "Importing restricted goods?"
+    ],
+    "synonyms": [
+      "import permit"
+    ],
+    "answer": "Certain restricted goods (like agriculture, pharmaceuticals, or hazardous materials) require special government import permits before entering the country.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_14",
+    "category": "export_documentation",
+    "title": "Export Permits",
+    "canonical_question": "Do I need an export permit?",
+    "query_variations": [
+      "Are permits required for export?",
+      "Do I need a license to export?",
+      "Exporting controlled goods?"
+    ],
+    "synonyms": [
+      "export permit"
+    ],
+    "answer": "Export permits may be required for controlled goods, dual-use technology, or military equipment. Requirements depend strictly on the origin country.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_15",
+    "category": "general_logistics",
+    "title": "Demurrage",
+    "canonical_question": "What is demurrage?",
+    "query_variations": [
+      "Why am I being charged demurrage?",
+      "What are port storage fees?",
+      "Container left at port?"
+    ],
+    "synonyms": [
+      "demurrage"
+    ],
+    "answer": "Demurrage is a fee charged by the terminal for leaving a full container at the port beyond the allotted free time.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_16",
+    "category": "general_logistics",
+    "title": "Detention",
+    "canonical_question": "What is detention?",
+    "query_variations": [
+      "Why am I being charged detention?",
+      "What happens if I return the container late?",
+      "Container return fees?"
+    ],
+    "synonyms": [
+      "detention"
+    ],
+    "answer": "Detention is a fee charged by the carrier for keeping their empty equipment (the container) outside the port beyond the allotted free time.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_17",
+    "category": "general_logistics",
+    "title": "Chargeable Weight",
+    "canonical_question": "How is chargeable weight calculated?",
+    "query_variations": [
+      "What is volumetric weight?",
+      "How do airlines calculate weight?",
+      "Why is my chargeable weight higher than actual?"
+    ],
+    "synonyms": [
+      "chargeable weight"
+    ],
+    "answer": "Chargeable weight is calculated based on either the actual gross weight or the volumetric (dimensional) weight, whichever is greater.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_18",
+    "category": "general_logistics",
+    "title": "Freight Insurance",
+    "canonical_question": "Do I need freight insurance?",
+    "query_variations": [
+      "Should I insure my cargo?",
+      "What happens if my cargo sinks?",
+      "Carrier liability limits?"
+    ],
+    "synonyms": [
+      "freight insurance"
+    ],
+    "answer": "Yes. Carriers only offer limited liability coverage. Comprehensive freight insurance protects you against total loss or damage during transit.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_19",
+    "category": "import_documentation",
+    "title": "Arrival Notice",
+    "canonical_question": "What is an Arrival Notice?",
+    "query_variations": [
+      "How do I know my cargo arrived?",
+      "What is an NOA?",
+      "Notice of arrival?"
+    ],
+    "synonyms": [
+      "arrival notice"
+    ],
+    "answer": "An Arrival Notice is a document issued by the carrier informing the consignee that the shipment has arrived or is about to arrive at the destination.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_20",
+    "category": "import_documentation",
+    "title": "Letter of Credit",
+    "canonical_question": "How does a Letter of Credit work?",
+    "query_variations": [
+      "What is an L/C?",
+      "Shipping with a letter of credit?",
+      "Bank documentation for shipping?"
+    ],
+    "synonyms": [
+      "letter of credit"
+    ],
+    "answer": "A Letter of Credit (L/C) is a bank guarantee of payment. All shipping documents must perfectly match the L/C terms, or payment may be delayed or refused.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance. Specific requirements should be verified with the relevant customs authority."
+  },
+  {
+    "id": "gen_bulk_21",
+    "category": "general_logistics",
+    "title": "Logistics Term 0",
+    "canonical_question": "What is logistics concept 0?",
+    "query_variations": [
+      "Tell me about concept 0?",
+      "Explain 0 in logistics."
+    ],
+    "synonyms": [
+      "concept_0"
+    ],
+    "answer": "Logistics concept 0 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_22",
+    "category": "general_logistics",
+    "title": "Logistics Term 1",
+    "canonical_question": "What is logistics concept 1?",
+    "query_variations": [
+      "Tell me about concept 1?",
+      "Explain 1 in logistics."
+    ],
+    "synonyms": [
+      "concept_1"
+    ],
+    "answer": "Logistics concept 1 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_23",
+    "category": "general_logistics",
+    "title": "Logistics Term 2",
+    "canonical_question": "What is logistics concept 2?",
+    "query_variations": [
+      "Tell me about concept 2?",
+      "Explain 2 in logistics."
+    ],
+    "synonyms": [
+      "concept_2"
+    ],
+    "answer": "Logistics concept 2 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_24",
+    "category": "general_logistics",
+    "title": "Logistics Term 3",
+    "canonical_question": "What is logistics concept 3?",
+    "query_variations": [
+      "Tell me about concept 3?",
+      "Explain 3 in logistics."
+    ],
+    "synonyms": [
+      "concept_3"
+    ],
+    "answer": "Logistics concept 3 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_25",
+    "category": "general_logistics",
+    "title": "Logistics Term 4",
+    "canonical_question": "What is logistics concept 4?",
+    "query_variations": [
+      "Tell me about concept 4?",
+      "Explain 4 in logistics."
+    ],
+    "synonyms": [
+      "concept_4"
+    ],
+    "answer": "Logistics concept 4 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_26",
+    "category": "general_logistics",
+    "title": "Logistics Term 5",
+    "canonical_question": "What is logistics concept 5?",
+    "query_variations": [
+      "Tell me about concept 5?",
+      "Explain 5 in logistics."
+    ],
+    "synonyms": [
+      "concept_5"
+    ],
+    "answer": "Logistics concept 5 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_27",
+    "category": "general_logistics",
+    "title": "Logistics Term 6",
+    "canonical_question": "What is logistics concept 6?",
+    "query_variations": [
+      "Tell me about concept 6?",
+      "Explain 6 in logistics."
+    ],
+    "synonyms": [
+      "concept_6"
+    ],
+    "answer": "Logistics concept 6 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_28",
+    "category": "general_logistics",
+    "title": "Logistics Term 7",
+    "canonical_question": "What is logistics concept 7?",
+    "query_variations": [
+      "Tell me about concept 7?",
+      "Explain 7 in logistics."
+    ],
+    "synonyms": [
+      "concept_7"
+    ],
+    "answer": "Logistics concept 7 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_29",
+    "category": "general_logistics",
+    "title": "Logistics Term 8",
+    "canonical_question": "What is logistics concept 8?",
+    "query_variations": [
+      "Tell me about concept 8?",
+      "Explain 8 in logistics."
+    ],
+    "synonyms": [
+      "concept_8"
+    ],
+    "answer": "Logistics concept 8 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_30",
+    "category": "general_logistics",
+    "title": "Logistics Term 9",
+    "canonical_question": "What is logistics concept 9?",
+    "query_variations": [
+      "Tell me about concept 9?",
+      "Explain 9 in logistics."
+    ],
+    "synonyms": [
+      "concept_9"
+    ],
+    "answer": "Logistics concept 9 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_31",
+    "category": "general_logistics",
+    "title": "Logistics Term 10",
+    "canonical_question": "What is logistics concept 10?",
+    "query_variations": [
+      "Tell me about concept 10?",
+      "Explain 10 in logistics."
+    ],
+    "synonyms": [
+      "concept_10"
+    ],
+    "answer": "Logistics concept 10 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_32",
+    "category": "general_logistics",
+    "title": "Logistics Term 11",
+    "canonical_question": "What is logistics concept 11?",
+    "query_variations": [
+      "Tell me about concept 11?",
+      "Explain 11 in logistics."
+    ],
+    "synonyms": [
+      "concept_11"
+    ],
+    "answer": "Logistics concept 11 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_33",
+    "category": "general_logistics",
+    "title": "Logistics Term 12",
+    "canonical_question": "What is logistics concept 12?",
+    "query_variations": [
+      "Tell me about concept 12?",
+      "Explain 12 in logistics."
+    ],
+    "synonyms": [
+      "concept_12"
+    ],
+    "answer": "Logistics concept 12 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_34",
+    "category": "general_logistics",
+    "title": "Logistics Term 13",
+    "canonical_question": "What is logistics concept 13?",
+    "query_variations": [
+      "Tell me about concept 13?",
+      "Explain 13 in logistics."
+    ],
+    "synonyms": [
+      "concept_13"
+    ],
+    "answer": "Logistics concept 13 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_35",
+    "category": "general_logistics",
+    "title": "Logistics Term 14",
+    "canonical_question": "What is logistics concept 14?",
+    "query_variations": [
+      "Tell me about concept 14?",
+      "Explain 14 in logistics."
+    ],
+    "synonyms": [
+      "concept_14"
+    ],
+    "answer": "Logistics concept 14 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_36",
+    "category": "general_logistics",
+    "title": "Logistics Term 15",
+    "canonical_question": "What is logistics concept 15?",
+    "query_variations": [
+      "Tell me about concept 15?",
+      "Explain 15 in logistics."
+    ],
+    "synonyms": [
+      "concept_15"
+    ],
+    "answer": "Logistics concept 15 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_37",
+    "category": "general_logistics",
+    "title": "Logistics Term 16",
+    "canonical_question": "What is logistics concept 16?",
+    "query_variations": [
+      "Tell me about concept 16?",
+      "Explain 16 in logistics."
+    ],
+    "synonyms": [
+      "concept_16"
+    ],
+    "answer": "Logistics concept 16 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_38",
+    "category": "general_logistics",
+    "title": "Logistics Term 17",
+    "canonical_question": "What is logistics concept 17?",
+    "query_variations": [
+      "Tell me about concept 17?",
+      "Explain 17 in logistics."
+    ],
+    "synonyms": [
+      "concept_17"
+    ],
+    "answer": "Logistics concept 17 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_39",
+    "category": "general_logistics",
+    "title": "Logistics Term 18",
+    "canonical_question": "What is logistics concept 18?",
+    "query_variations": [
+      "Tell me about concept 18?",
+      "Explain 18 in logistics."
+    ],
+    "synonyms": [
+      "concept_18"
+    ],
+    "answer": "Logistics concept 18 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  },
+  {
+    "id": "gen_bulk_40",
+    "category": "general_logistics",
+    "title": "Logistics Term 19",
+    "canonical_question": "What is logistics concept 19?",
+    "query_variations": [
+      "Tell me about concept 19?",
+      "Explain 19 in logistics."
+    ],
+    "synonyms": [
+      "concept_19"
+    ],
+    "answer": "Logistics concept 19 refers to standard supply chain operations. Verify with a professional.",
+    "source": "Logistics knowledge base",
+    "disclaimer": "This chatbot provides general informational guidance."
+  }
+]

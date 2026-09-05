@@ -1,0 +1,37 @@
+# Python Environments
+venv/
+env/
+.venv/
+.env
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest and coverage caches
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Machine Learning Models and Weights 
+# (SentenceTransformers caches here if downloaded locally instead of user directory)
+*.bin
+*.pt
+*.pth
+*.safetensors
+*.onnx
+models/
+huggingface/
+.cache/
+.huggingface/
+
+# IDE configurations
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db

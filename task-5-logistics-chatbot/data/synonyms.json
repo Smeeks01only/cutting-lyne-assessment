@@ -1,0 +1,53 @@
+{
+  "shipment": [
+    "cargo",
+    "consignment",
+    "freight",
+    "goods",
+    "load",
+    "package",
+    "order"
+  ],
+  "documents": [
+    "docs",
+    "documentation",
+    "paperwork",
+    "papers",
+    "forms",
+    "certificates"
+  ],
+  "tracking": [
+    "track",
+    "locate",
+    "whereabouts",
+    "status",
+    "follow",
+    "find"
+  ],
+  "duties": [
+    "customs duty",
+    "import duty",
+    "tariff",
+    "tax",
+    "taxes",
+    "customs charges",
+    "import charges",
+    "fees",
+    "bill"
+  ],
+  "delay": [
+    "late",
+    "delayed",
+    "held",
+    "stuck",
+    "taking too long",
+    "detained",
+    "blocked"
+  ],
+  "clearance": [
+    "clearing",
+    "customs clear",
+    "release",
+    "process"
+  ]
+}
