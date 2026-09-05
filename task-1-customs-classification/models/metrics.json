@@ -1,0 +1,11 @@
+{
+    "model": "Linear SVM",
+    "accuracy": 0.8730910633484162,
+    "macro_f1": 0.9271317509153356,
+    "weighted_f1": 0.8680780287285997,
+    "top_3_accuracy": 0.907310520361991,
+    "top_5_accuracy": 0.919612556561086,
+    "training_records": 56572,
+    "testing_records": 14144,
+    "hs_classes": 5621
+}

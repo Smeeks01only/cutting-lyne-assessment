@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customs Classification Assistant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a; /* Slate 900 */
+            --card-bg: rgba(30, 41, 59, 0.7); /* Slate 800 with opacity */
+            --primary: #3b82f6; /* Blue 500 */
+            --primary-hover: #2563eb; /* Blue 600 */
+            --text-main: #f8fafc; /* Slate 50 */
+            --text-muted: #94a3b8; /* Slate 400 */
+            --success: #10b981; /* Emerald 500 */
+            --warning: #f59e0b; /* Amber 500 */
+            --error: #ef4444; /* Red 500 */
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #020617 0%, #1e1b4b 100%);
+            color: var(--text-main);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .glass-card {
+            background: var(--card-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            padding: 2.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #60a5fa, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 0.5rem;
+        }
+
+        .header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .input-group {
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        textarea {
+            width: 100%;
+            background: rgba(15, 23, 42, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 1rem;
+            padding: 1.25rem;
+            color: var(--text-main);
+            font-size: 1.1rem;
+            font-family: 'Inter', sans-serif;
+            resize: vertical;
+            min-height: 120px;
+            transition: all 0.3s ease;
+            outline: none;
+        }
+
+        textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+        }
+
+        textarea::placeholder {
+            color: rgba(148, 163, 184, 0.5);
+        }
+
+        .btn-classify {
+            width: 100%;
+            background: linear-gradient(to right, var(--primary), #8b5cf6);
+            color: white;
+            border: none;
+            border-radius: 1rem;
+            padding: 1.25rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 15px -3px rgba(59, 130, 246, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-classify:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 20px 25px -5px rgba(59, 130, 246, 0.5);
+        }
+
+        .btn-classify:active {
+            transform: translateY(1px);
+        }
+
+        .btn-classify.loading {
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .btn-classify.loading span {
+            visibility: hidden;
+        }
+
+        .btn-classify.loading::after {
+            content: "";
+            position: absolute;
+            width: 24px;
+            height: 24px;
+            top: 50%;
+            left: 50%;
+            margin-top: -12px;
+            margin-left: -12px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Results Area */
+        #results {
+            margin-top: 2.5rem;
+            display: none;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 0.5rem 1.25rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1.5rem;
+        }
+
+        .status-classified { background: rgba(16, 185, 129, 0.2); color: var(--success); border: 1px solid rgba(16, 185, 129, 0.3); }
+        .status-manual_review { background: rgba(245, 158, 11, 0.2); color: var(--warning); border: 1px solid rgba(245, 158, 11, 0.3); }
+        .status-invalid { background: rgba(239, 68, 68, 0.2); color: var(--error); border: 1px solid rgba(239, 68, 68, 0.3); }
+
+        .result-main {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        .hs-code {
+            font-size: 2.5rem;
+            font-weight: 700;
+            font-family: monospace;
+            margin-bottom: 0.5rem;
+            color: #fff;
+        }
+
+        .hs-desc {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .flags-container, .alternatives-container {
+            margin-top: 1.5rem;
+        }
+
+        .section-title {
+            font-size: 1rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .flag-item {
+            background: rgba(239, 68, 68, 0.1);
+            color: #fca5a5;
+            padding: 0.75rem 1rem;
+            border-radius: 0.75rem;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        .flag-item::before {
+            content: "⚠️";
+            margin-right: 0.5rem;
+        }
+
+        .alt-item {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 1rem;
+            border-radius: 0.75rem;
+            margin-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.2s ease;
+        }
+
+        .alt-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .alt-code {
+            font-family: monospace;
+            font-weight: 600;
+            color: #93c5fd;
+            font-size: 1.1rem;
+        }
+
+        .alt-desc {
+            flex-grow: 1;
+            margin: 0 1rem;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .alt-score {
+            background: rgba(0,0,0,0.3);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-family: monospace;
+            color: #cbd5e1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="glass-card">
+            <div class="header">
+                <h1>Customs AI</h1>
+                <p>Automated HS Code Classification</p>
+            </div>
+
+            <div class="input-group">
+                <textarea id="descriptionInput" placeholder="Enter product description (e.g. '100% cotton men\'s short sleeve t-shirt')"></textarea>
+            </div>
+
+            <button id="classifyBtn" class="btn-classify" onclick="classify()">
+                <span>Classify Product</span>
+            </button>
+
+            <div id="results">
+                <!-- Status Badge -->
+                <div id="statusBadge" class="status-badge"></div>
+
+                <!-- Main Prediction -->
+                <div id="mainResult" class="result-main">
+                    <div id="hsCode" class="hs-code"></div>
+                    <div id="hsDesc" class="hs-desc"></div>
+                </div>
+
+                <!-- Risk Flags -->
+                <div id="flagsSection" class="flags-container" style="display: none;">
+                    <div class="section-title">Risk Flags</div>
+                    <div id="flagsList"></div>
+                </div>
+
+                <!-- Alternatives -->
+                <div id="alternativesSection" class="alternatives-container" style="display: none;">
+                    <div class="section-title">Alternatives</div>
+                    <div id="alternativesList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        async function classify() {
+            const input = document.getElementById('descriptionInput').value;
+            const btn = document.getElementById('classifyBtn');
+            const resultsDiv = document.getElementById('results');
+            
+            if (!input.trim()) {
+                // Flash border red quickly if empty
+                document.getElementById('descriptionInput').style.borderColor = 'var(--error)';
+                setTimeout(() => {
+                    document.getElementById('descriptionInput').style.borderColor = 'rgba(255, 255, 255, 0.2)';
+                }, 500);
+            }
+
+            // UI Loading state
+            btn.classList.add('loading');
+            resultsDiv.style.display = 'none';
+
+            try {
+                const response = await fetch('/api/classify', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ description: input })
+                });
+
+                const data = await response.json();
+                renderResults(data);
+
+            } catch (error) {
+                console.error("Classification error:", error);
+                alert("An error occurred connecting to the API.");
+            } finally {
+                btn.classList.remove('loading');
+            }
+        }
+
+        function renderResults(data) {
+            const resultsDiv = document.getElementById('results');
+            const statusBadge = document.getElementById('statusBadge');
+            const mainResult = document.getElementById('mainResult');
+            const hsCode = document.getElementById('hsCode');
+            const hsDesc = document.getElementById('hsDesc');
+            
+            const flagsSection = document.getElementById('flagsSection');
+            const flagsList = document.getElementById('flagsList');
+            
+            const alternativesSection = document.getElementById('alternativesSection');
+            const alternativesList = document.getElementById('alternativesList');
+
+            // Reset states
+            statusBadge.className = 'status-badge';
+            flagsList.innerHTML = '';
+            alternativesList.innerHTML = '';
+
+            // Status Map
+            const statusDisplay = {
+                'classified': '✅ Classified',
+                'manual_review': '⚠️ Manual Review Required',
+                'invalid': '❌ Invalid Input'
+            };
+
+            statusBadge.textContent = statusDisplay[data.status] || data.status;
+            statusBadge.classList.add(`status-${data.status}`);
+
+            if (data.status === 'invalid' || !data.hs_code) {
+                mainResult.style.display = 'none';
+                alternativesSection.style.display = 'none';
+            } else {
+                mainResult.style.display = 'block';
+                hsCode.textContent = data.hs_code;
+                hsDesc.textContent = data.description;
+                
+                // Alternatives
+                if (data.alternatives && data.alternatives.length > 0) {
+                    alternativesSection.style.display = 'block';
+                    data.alternatives.forEach(alt => {
+                        alternativesList.innerHTML += `
+                            <div class="alt-item">
+                                <span class="alt-code">${alt.hs_code}</span>
+                                <span class="alt-desc" title="${alt.description}">${alt.description}</span>
+                                <span class="alt-score">${alt.decision_score.toFixed(4)}</span>
+                            </div>
+                        `;
+                    });
+                } else {
+                    alternativesSection.style.display = 'none';
+                }
+            }
+
+            // Risk Flags
+            if (data.risk_flags && data.risk_flags.length > 0) {
+                flagsSection.style.display = 'block';
+                data.risk_flags.forEach(flag => {
+                    flagsList.innerHTML += `<div class="flag-item">${flag}</div>`;
+                });
+            } else {
+                flagsSection.style.display = 'none';
+            }
+
+            resultsDiv.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
