@@ -2,7 +2,7 @@
 
 **Candidate:** Tinashe Dzikiti  
 **Email:** sirbasil.100@gmail.com
-**Phone:** 077243207
+**Phone:** 0772483207
 **GitHub Repository:** https://github.com/Smeeks01only/cutting-lyne-assessment
 
 ---
