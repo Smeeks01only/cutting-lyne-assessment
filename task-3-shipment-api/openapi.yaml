@@ -1,0 +1,192 @@
+openapi: 3.1.0
+info:
+  title: Cutting Lyne - Task 3 Shipment API
+  description: |
+    Shipment Tracking API is a **technical-assessment prototype** for Cutting Lyne Freight & Logistics.
+
+    ## Important Disclaimers
+    * **Prototype Status**: This is a technical-assessment prototype only.
+    * **ETA Calculations**: The estimated delivery dates are derived from simple rules-based estimates, NOT production predictive models.
+    * **Risk Engine**: The risk flags generated are based entirely on deterministic business rules.
+    * **Sample Data**: All shipment data and records returned by this API are strictly fictional demonstration data.
+  version: 1.0.0
+  contact:
+    name: Cutting Lyne AI Assessment
+paths:
+  /api/shipments/{tracking_number}:
+    get:
+      tags:
+        - shipments
+      summary: Get Shipment Details
+      description: |
+        Retrieve the current status, estimated delivery date, and risk flags for a given shipment.
+
+        - **Purpose**: To provide a unified shipment tracking view integrating basic ETA and Risk systems.
+        - **Path Parameter**: `tracking_number` (string, min length 3) - The unique identifier of the shipment.
+        - **Risk Flag Structure**: A list of objects containing a `code`, `severity`, and `message`.
+
+        **Note**: This is a technical-assessment prototype. ETAs and risk flags are rules-based. Sample data is completely fictional.
+      operationId: get_shipment_status_api_shipments__tracking_number__get
+      parameters:
+        - name: tracking_number
+          in: path
+          required: true
+          schema:
+            type: string
+            minLength: 3
+            title: Tracking Number
+          description: The unique tracking number of the shipment
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ShipmentResponse'
+              example:
+                tracking_number: TRK-URGENT-02
+                client_name: Global Trade LLC
+                origin: Rotterdam, Netherlands
+                destination: New York, USA
+                cargo_type: Machinery Parts
+                weight_kg: 2500.5
+                value_usd: 85000.0
+                status: DOCUMENTS_PENDING
+                booking_date: '2023-01-01T12:00:00'
+                vessel_berth_date: '2023-01-05T12:00:00'
+                documents_lodged: false
+                estimated_arrival_date: '2023-01-15T12:00:00'
+                estimated_delivery_date: '2023-01-18T12:00:00'
+                risk_flags:
+                  - code: DOCUMENTS_NOT_LODGED
+                    severity: HIGH
+                    message: Required documents have not been lodged and vessel berths in 4 days.
+        '404':
+          description: Shipment Not Found
+          content:
+            application/json:
+              example:
+                detail: Shipment with tracking number 'TRK99999' not found.
+        '422':
+          description: Validation Error (e.g., tracking number too short)
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      properties:
+        detail:
+          items:
+            $ref: '#/components/schemas/ValidationError'
+          type: array
+          title: Detail
+      type: object
+      title: HTTPValidationError
+    RiskFlag:
+      properties:
+        code:
+          type: string
+          title: Code
+        severity:
+          type: string
+          title: Severity
+        message:
+          type: string
+          title: Message
+      type: object
+      required:
+        - code
+        - severity
+        - message
+      title: RiskFlag
+    ShipmentResponse:
+      properties:
+        tracking_number:
+          type: string
+          title: Tracking Number
+        client_name:
+          type: string
+          title: Client Name
+        origin:
+          type: string
+          title: Origin
+        destination:
+          type: string
+          title: Destination
+        cargo_type:
+          type: string
+          title: Cargo Type
+        weight_kg:
+          type: number
+          title: Weight Kg
+        value_usd:
+          type: number
+          title: Value Usd
+        status:
+          type: string
+          title: Status
+        booking_date:
+          type: string
+          format: date-time
+          title: Booking Date
+        vessel_berth_date:
+          type: string
+          format: date-time
+          title: Vessel Berth Date
+        documents_lodged:
+          type: boolean
+          title: Documents Lodged
+        estimated_arrival_date:
+          type: string
+          format: date-time
+          title: Estimated Arrival Date
+        actual_delivery_date:
+          type: string
+          format: date-time
+          title: Actual Delivery Date
+        risk_flags:
+          items:
+            $ref: '#/components/schemas/RiskFlag'
+          type: array
+          title: Risk Flags
+          default: []
+        estimated_delivery_date:
+          type: string
+          format: date-time
+          title: Estimated Delivery Date
+      type: object
+      required:
+        - tracking_number
+        - client_name
+        - origin
+        - destination
+        - cargo_type
+        - weight_kg
+        - value_usd
+        - status
+        - booking_date
+        - documents_lodged
+      title: ShipmentResponse
+    ValidationError:
+      properties:
+        loc:
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+          type: array
+          title: Location
+        msg:
+          type: string
+          title: Message
+        type:
+          type: string
+          title: Error Type
+      type: object
+      required:
+        - loc
+        - msg
+        - type
+      title: ValidationError

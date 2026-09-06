@@ -10,7 +10,7 @@ import logging
 logger = logging.getLogger(__name__)
 
 class KnowledgeRetriever:
-    def __init__(self, kb_path: str = None, tfidf_weight: float = 0.35, semantic_weight: float = 0.65, threshold: float = 0.40):
+    def __init__(self, kb_path: str = None, tfidf_weight: float = 0.35, semantic_weight: float = 0.65, threshold: float = 0.25):
         """
         Initializes the Hybrid Retriever, loading the KB and pre-computing both the TF-IDF matrix
         and the Semantic Embeddings so they do not have to be rebuilt on every request.
