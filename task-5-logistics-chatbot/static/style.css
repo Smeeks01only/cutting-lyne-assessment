@@ -21,6 +21,8 @@ body {
     background: var(--bg-color);
     color: var(--text-primary);
     height: 100vh;
+    height: 100dvh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,6 +33,7 @@ body {
     width: 100%;
     max-width: 900px;
     height: 100vh;
+    height: 100dvh;
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -55,7 +58,7 @@ body {
 }
 
 @media (max-width: 768px) {
-    .chat-card { border-radius: 0; max-height: 100vh; border: none; }
+    .chat-card { border-radius: 0; max-height: 100vh; max-height: 100dvh; height: 100%; border: none; }
 }
 
 /* Header */
