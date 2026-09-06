@@ -23,4 +23,4 @@ app.include_router(chat.router)
 @app.get("/")
 async def serve_frontend(request: Request):
     """Serves the Chatbot HTML UI."""
-    return templates.TemplateResponse("index.html", {"request": request})
+    return templates.TemplateResponse(request=request, name="index.html")
